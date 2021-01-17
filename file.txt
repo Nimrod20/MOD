@@ -1,3 +1,6 @@
 hello world
 
-from web
+from {web}
+
+
+{dev} bla blah
