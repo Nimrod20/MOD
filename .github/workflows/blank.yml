@@ -34,14 +34,19 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      - name: Regex Replace
-      # You may pin to the exact commit or the version.
-      # uses: ashley-taylor/regex-property-action@93a24f845cd20790924208225cc72da8b4c6d46d
-      - uses: ashley-taylor/regex-property-action@1.2
+      - name: Replace tokens
+          # You may pin to the exact commit or the version.
+          # uses: cschleiden/replace-tokens@121d9153eda2951d490e9f724a67ff095ab4c4f7
+        uses: cschleiden/replace-tokens@v1.0
         with:
-          # input string to apply regex to
-          value: 
-            "kuku" # regex to apply
-          regex: 
-            "web" # flags of the regex
+          # 
+          tokenPrefix: '{'
+          # 
+          tokenSuffix: '}'
+          # 
+          files: file.txt
+        env:
+          web: "this was replaced"
+          dev: "second replace"
+  
           
