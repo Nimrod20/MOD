@@ -35,11 +35,10 @@ jobs:
          
       - name: copy
         run: cp *.* newDir/
-      
-      - name: cd
-        run: 
-              cd newDir/
-             ls
+      - name: Run a multi-line script
+        run: |
+          cd newDir/
+          ls
       - name: ls
         run: ls
            
