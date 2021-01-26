@@ -37,7 +37,8 @@ jobs:
         run: cp *.* newDir/
       
       - name: cd
-        run: cd newDir/
+        run: 
+              cd newDir/
              ls
       - name: ls
         run: ls
