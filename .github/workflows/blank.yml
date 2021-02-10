@@ -42,8 +42,8 @@ jobs:
           echo "::set-output name=OUTPUT::$OUTPUT"
           
       - name: run if
-        if: contains(steps.outputcheck.outputs.OUTPUT,'kuku')
-        run: "kuku is here"
+        if: contains((echo steps.outputcheck.outputs.OUTPUT),'kuku')
+        run: echo "kuku is here"
        
      
       - name: mkdir
