@@ -42,7 +42,7 @@ jobs:
           echo "::set-output name=OUTPUT::$OUTPUT"
           
       - name: run if
-        if: contains(steps.outputcheck.outputs.OUTPUT,'kuku')
+        if: contains(steps.outputcheck.outputs.OUTPUT,'# MOD')
         run: echo "kuku is here"
        
      
