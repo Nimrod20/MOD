@@ -31,10 +31,20 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
       - name: output check
+        id: outputcheck
         run: |
           OUTPUT="$(cat README.md)"
           echo "$OUTPUT"
-        
+          REPORT="${OUTPUT//'%'/'%25'}"
+          REPORT="${OUTPUT//$'\n'/'%0A'}"
+          REPORT="${OUTPUT//$'\r'/'%0D'}"
+          echo "$OUTPUT"
+          echo "::set-output name=OUTPUT::$OUTPUT"
+          
+      - name: run if
+        if: contains(steps.outputcheck.outputs.OUTPUT,'kuku')
+        run: "kuku is here"
+       
      
       - name: mkdir
         run: mkdir newDir
