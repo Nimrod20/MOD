@@ -32,7 +32,7 @@ jobs:
         run: echo Hello, world!
       - name: output check
         run: |
-          OUTPUT="$(cat readme.md)"
+          OUTPUT="$(cat README.md)"
           echo "$OUTPUT"
         
      
