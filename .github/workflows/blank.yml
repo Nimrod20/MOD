@@ -21,17 +21,19 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    env:
+      BUILD_ID: "$(date +'%Y%m%d')-$GITHUB_RUN_ID-$GITHUB_RUN_NUMBER"
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
     # creating a build/release run number
-      - name: Build Number
-        run: echo "::set-env name=buildid::$(date +'%Y%m%d')-$GITHUB_RUN_ID-$GITHUB_RUN_NUMBER"
+      #- name: Build Number
+       # run: echo "::set-env name=buildid::$(date +'%Y%m%d')-$GITHUB_RUN_ID-$GITHUB_RUN_NUMBER"
       
       - name: echo var
-        run: echo env.buildid
+        run: echo env.BUILD_ID
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
