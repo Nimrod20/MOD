@@ -26,7 +26,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
+    # creating a build/release run number
+      - name: Build Number
+        run: echo "$GITHUB_RUN_ID-$GITHUB_RUN_NUMBER"
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
