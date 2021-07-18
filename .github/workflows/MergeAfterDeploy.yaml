@@ -8,12 +8,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          path: dev
+          path: test
       - name: merge dev to  main
         uses: devmasx/merge-branch@v1.3.1
         with:
           type: now
-          from_branch: dev
+          from_branch: test
           target_branch: main
           github_token: ${{github.token}} 
       - name: Commit tagger
