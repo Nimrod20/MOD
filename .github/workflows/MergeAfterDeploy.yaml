@@ -8,12 +8,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          path: dev
+          path: test
       - name: merge dev to  main
         uses: devmasx/merge-branch@v1.3.1
         with:
           type: now
-          from_branch: dev
+          from_branch: test
           target_branch: main
           github_token: ${{github.token}} 
       - name: Commit tagger
@@ -24,7 +24,7 @@ jobs:
           # The GITHUB_TOKEN secret
           repo-token: ${{github.token}} 
           # Tag text
-          tag: "New Ver"# optional, default is 0.1.0
+          tag: "NewVer" # optional, default is 0.1.0
           # optional commit sha to apply the tag to
           #commit-sha: # optional
           
