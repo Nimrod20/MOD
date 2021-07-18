@@ -1,6 +1,0 @@
-hello world
-
-from {web}
-
-
-{dev} bla blah
